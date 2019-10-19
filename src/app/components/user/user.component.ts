@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { User } from "../../models/User";
 
 @Component({
@@ -6,11 +6,13 @@ import { User } from "../../models/User";
   templateUrl: "./user.component.html",
   styleUrls: ["./user.component.css"]
 })
-export class UserComponent {
+export class UserComponent implements OnInit {
   // using an interface for the user to make it more modular. put interface in another file
   user: User;
 
-  constructor() {
+  constructor() {}
+
+  ngOnInit() {
     this.user = {
       firstName: "User",
       lastName: "One",
