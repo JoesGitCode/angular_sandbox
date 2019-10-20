@@ -7,6 +7,7 @@ export interface User {
     city?: string;
     country?: string;
   };
+  image?: string;
 }
 
 // the question mark makes them optional when utilizing the interface
