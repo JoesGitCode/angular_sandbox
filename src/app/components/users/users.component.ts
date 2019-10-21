@@ -109,4 +109,8 @@ export class UsersComponent implements OnInit {
       "font-size": this.showExtended ? "" : "30px"
     };
   }
+
+  formSubmit(event) {
+    console.log(event);
+  }
 }
