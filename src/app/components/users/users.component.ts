@@ -4,13 +4,14 @@ import { User } from "../../models/User";
 @Component({
   selector: "app-users",
   templateUrl: "./users.component.html",
-  styleUrls: ["./users.component.sass"]
+  styleUrls: ["./users.component.scss"]
 })
 export class UsersComponent implements OnInit {
   users: User[];
   showExtended: boolean = true;
   loaded: boolean = false;
   enableAdd: boolean = true;
+  currentClasses = {};
 
   constructor() {}
 
@@ -27,7 +28,8 @@ export class UsersComponent implements OnInit {
           city: "Edinburgh",
           country: "Scotland"
         },
-        image: "http://lorempixel.com/600/600/people/1"
+        image: "http://lorempixel.com/600/600/people/1",
+        isActive: true
       },
       {
         firstName: "Shawn",
@@ -38,7 +40,8 @@ export class UsersComponent implements OnInit {
           city: "Seoul",
           country: "Korea"
         },
-        image: "http://lorempixel.com/600/600/people/2"
+        image: "http://lorempixel.com/600/600/people/2",
+        isActive: false
       },
       {
         firstName: "User",
@@ -49,11 +52,13 @@ export class UsersComponent implements OnInit {
           city: "Rome",
           country: "Italy"
         },
-        image: "http://lorempixel.com/600/600/people/3"
+        image: "http://lorempixel.com/600/600/people/3",
+        isActive: true
       }
     ];
 
     this.loaded = true;
+    this.setCurrentClasses();
     // }, 2000);
 
     this.showExtended = true;
@@ -67,5 +72,12 @@ export class UsersComponent implements OnInit {
 
   addUser(user: User) {
     this.users.push(user);
+  }
+
+  setCurrentClasses() {
+    this.currentClasses = {
+      "btn-success": this.enableAdd,
+      "big-text": this.showExtended
+    };
   }
 }

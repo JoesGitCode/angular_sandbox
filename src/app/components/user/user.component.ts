@@ -4,7 +4,7 @@ import { User } from "../../models/User";
 @Component({
   selector: "app-user",
   templateUrl: "./user.component.html",
-  styleUrls: ["./user.component.css"]
+  styleUrls: ["./user.component.scss"]
 })
 export class UserComponent implements OnInit {
   // using an interface for the user to make it more modular. put interface in another file

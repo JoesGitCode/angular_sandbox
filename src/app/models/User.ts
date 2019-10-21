@@ -8,6 +8,7 @@ export interface User {
     country?: string;
   };
   image?: string;
+  isActive?: boolean;
 }
 
 // the question mark makes them optional when utilizing the interface
