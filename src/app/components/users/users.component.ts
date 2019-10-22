@@ -13,6 +13,7 @@ export class UsersComponent implements OnInit {
   enableAdd: boolean = true;
   currentClasses = {};
   currentStyles = {};
+  showUserForm: boolean = false;
 
   constructor() {}
 
@@ -32,7 +33,8 @@ export class UsersComponent implements OnInit {
         image: "http://lorempixel.com/600/600/people/1",
         isActive: true,
         balance: 53,
-        registered: new Date("2/5/2019")
+        registered: new Date("2/5/2019"),
+        hide: true
       },
       {
         firstName: "Shawn",
@@ -46,7 +48,8 @@ export class UsersComponent implements OnInit {
         image: "http://lorempixel.com/600/600/people/2",
         isActive: false,
         balance: 80,
-        registered: new Date("6/25/2018")
+        registered: new Date("6/25/2018"),
+        hide: true
       },
       {
         firstName: "Kurt",
@@ -60,7 +63,8 @@ export class UsersComponent implements OnInit {
         image: "http://lorempixel.com/600/600/people/3",
         isActive: false,
         balance: 30,
-        registered: new Date("7/2/2015")
+        registered: new Date("7/2/2015"),
+        hide: true
       },
       {
         firstName: "Chris",
@@ -74,7 +78,8 @@ export class UsersComponent implements OnInit {
         image: "http://lorempixel.com/600/600/people/4",
         isActive: true,
         balance: 40,
-        registered: new Date("6/3/2015")
+        registered: new Date("6/3/2015"),
+        hide: true
       }
     ];
 
@@ -110,7 +115,12 @@ export class UsersComponent implements OnInit {
     };
   }
 
-  formSubmit(event) {
-    console.log(event);
+  onSubmit(event) {
+    event.preventDefault();
   }
+
+  // instead of putting the function here, it can be put in the button click html
+  // toggleHide(user: User) {
+  //   user.hide = !user.hide;
+  // }
 }

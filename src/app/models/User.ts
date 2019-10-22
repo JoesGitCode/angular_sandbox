@@ -11,6 +11,7 @@ export interface User {
   isActive?: boolean;
   balance?: number;
   registered?: any;
+  hide?: true;
 }
 
 // the question mark makes them optional when utilizing the interface
