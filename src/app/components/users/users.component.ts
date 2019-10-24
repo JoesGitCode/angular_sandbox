@@ -20,7 +20,7 @@ export class UsersComponent implements OnInit {
   users: User[];
   showExtended: boolean = true;
   loaded: boolean = false;
-  enableAdd: boolean = true;
+  enableAdd: boolean = false;
   currentClasses = {};
   currentStyles = {};
   showUserForm: boolean = false;
@@ -107,14 +107,25 @@ export class UsersComponent implements OnInit {
     // });
   }
 
-  addUser(user: User) {
-    this.users.push(user);
+  addUser() {
+    this.user.isActive = true;
+    this.user.registered = new Date();
+    this.users.unshift(this.user);
+    this.user = {
+      firstName: "",
+      lastName: "",
+      age: null,
+      address: {
+        street: "",
+        city: "",
+        country: ""
+      }
+    };
   }
 
   setCurrentClasses() {
     this.currentClasses = {
-      "btn-success": this.enableAdd,
-      "big-text": this.showExtended
+      "btn-success": this.enableAdd
     };
   }
 
