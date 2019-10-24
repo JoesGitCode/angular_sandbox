@@ -16,6 +16,7 @@ export class UserComponent implements OnInit {
     this.user = {
       firstName: "User",
       lastName: "One",
+      email: "",
       age: 100,
       address: {
         street: "Princes Street",

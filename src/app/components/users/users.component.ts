@@ -10,6 +10,7 @@ export class UsersComponent implements OnInit {
   user: User = {
     firstName: "",
     lastName: "",
+    email: "",
     age: null,
     address: {
       street: "",
@@ -34,6 +35,7 @@ export class UsersComponent implements OnInit {
       {
         firstName: "Steve",
         lastName: "Austin",
+        email: "steve@gmail.com",
         age: 50,
         address: {
           street: "Princes Street",
@@ -49,6 +51,7 @@ export class UsersComponent implements OnInit {
       {
         firstName: "Shawn",
         lastName: "Michaels",
+        email: "shawn@gmail.com",
         age: 62,
         address: {
           street: "Gwanak-gu",
@@ -64,6 +67,7 @@ export class UsersComponent implements OnInit {
       {
         firstName: "Kurt",
         lastName: "Angle",
+        email: "kurt@gmail.com",
         age: 48,
         address: {
           street: "Main Street",
@@ -79,6 +83,7 @@ export class UsersComponent implements OnInit {
       {
         firstName: "Chris",
         lastName: "Benoit",
+        email: "chris@gmail.com",
         age: 44,
         address: {
           street: "First Street",
@@ -107,21 +112,22 @@ export class UsersComponent implements OnInit {
     // });
   }
 
-  addUser() {
-    this.user.isActive = true;
-    this.user.registered = new Date();
-    this.users.unshift(this.user);
-    this.user = {
-      firstName: "",
-      lastName: "",
-      age: null,
-      address: {
-        street: "",
-        city: "",
-        country: ""
-      }
-    };
-  }
+  // addUser() {
+  //   this.user.isActive = true;
+  //   this.user.registered = new Date();
+  //   this.users.unshift(this.user);
+  //   this.user = {
+  //     firstName: "",
+  //     lastName: "",
+  //     email: "",
+  //     age: null,
+  //     address: {
+  //       street: "",
+  //       city: "",
+  //       country: ""
+  //     }
+  //   };
+  // }
 
   setCurrentClasses() {
     this.currentClasses = {
