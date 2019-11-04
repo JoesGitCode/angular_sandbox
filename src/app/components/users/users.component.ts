@@ -27,15 +27,21 @@ export class UsersComponent implements OnInit {
   currentStyles = {};
   showUserForm: boolean = false;
   @ViewChild("userForm", { static: false }) form: any;
+  data: any;
 
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    this.users = this.dataService.getUsers();
+    this.dataService.getUsers().subscribe(users => {
+      this.users = users;
+      this.loaded = true;
+    });
+    // this.dataService.getData().subscribe(data => {
+    //   console.log(data);
+    // });
     // can wrap this in a set timeout to mimic loading data from and external source
     // setTimeout(() => {
 
-    this.loaded = true;
     this.setCurrentClasses();
     this.setCurrentStyles();
     // }, 2000);
